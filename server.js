@@ -1,19 +1,18 @@
-const express = require("express");
-const faker = require("@faker-js/faker");
+import express from "express";
+import { faker } from "@faker-js/faker";
 
 const app = express();
 
 app.get("/random-data", (req, res) => {
-  const randomData = {
-    name: faker.name.findName(),
-    email: faker.internet.email(),
-    address: faker.address.streetAddress(),
-    city: faker.address.city(),
-    country: faker.address.country(),
-    phone: faker.phone.phoneNumber(),
-    jobTitle: faker.name.jobTitle(),
-  };
-  res.json(randomData);
+  const userArr = [];
+  for (let i = 0; i < 5; i++) {
+    const randomUser = {
+      name: faker.person.fullName(),
+      email: faker.internet.email(),
+    };
+    userArr.push(randomUser);
+  }
+  res.json(userArr);
 });
 
 app.get("/", (req, res) => {
