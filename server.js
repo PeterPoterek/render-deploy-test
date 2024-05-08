@@ -1,5 +1,6 @@
 import express from "express";
 import { faker } from "@faker-js/faker";
+import cors from "cors";
 
 const app = express();
 
