@@ -12,7 +12,7 @@ app.get("/random-data", (req, res) => {
     };
     userArr.push(randomUser);
   }
-  res.json(userArr);
+  return res.status(200).json(userArr);
 });
 
 app.get("/", (req, res) => {
