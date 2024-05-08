@@ -3,6 +3,9 @@ import { faker } from "@faker-js/faker";
 
 const app = express();
 
+app.use(cors());
+app.use(express.json());
+
 app.get("/random-data", (req, res) => {
   const userArr = [];
   for (let i = 0; i < 5; i++) {
